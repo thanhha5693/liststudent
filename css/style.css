@@ -1,0 +1,169 @@
+/* Reset CSS mặc định */
+body, h1, h2, p, label, input, button, table, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  .form, .search, .pagination {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .modal {
+    display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  padding: 20px;
+  max-width: 300px;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+  }
+  
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /* Chế độ tối */
+  .dark-mode body {
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  .dark-mode button {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode button:hover {
+    background-color: #555;
+  }
+  
+  .dark-mode input {
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
+  }
+  
+  .dark-mode table {
+    border: 1px solid #555;
+  }
+  
+  .dark-mode th, .dark-mode td {
+    border: 1px solid #555;
+  }
+  
+  /* ... */
+
+/* ... */
+
+/* ... */
+
+/* ... */
+
+/* Nút chuyển đổi chế độ sáng/tối */
+.theme-switch {
+    position: fixed; /* Đặt vị trí tuyệt đối */
+    top: 20px; /* Khoảng cách từ phía trên */
+    right: 20px; /* Khoảng cách từ phía bên phải */
+    z-index: 9999; /* Để đảm bảo nút nằm trên cùng */
+  }
+  
+  .theme-switch button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .theme-switch #light-mode-button {
+    background-color: #fff;
+  }
+  
+  .theme-switch #dark-mode-button {
+    background-color: #333;
+  }
+  
+  /* ... */
+  
+

@@ -3,14 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quản lý sinh viên </title>
+  <h1 id="app-title">Quản lý sinh viên</h1>
+    <div class="theme-switch">
+      <button id="light-mode-button" onclick="setLightMode()"> Sáng</button>
+      <button id="dark-mode-button" onclick="setDarkMode()"> Tối</button>
+    </div>
   <link rel="stylesheet" type="text/css" href="./css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-  <script src="./css/js/student.js"></script>
 </head>
 <body>
-  
-
-  
+  <div class="container">
+    <h1 id="app-title">Quản lý sinh viên</h1>
+    <button id="dark-mode-button">Chuyển đổi chế độ</button>
+    <div class="form">
+      <label for="ID">ID</label>
+      <input type="number" id="id">
+      <label for="Name">Name</label>
+      <input type="text" id="name">
+      <label for="Age">Age</label>
+      <input type="number" id="age">
+      <button onclick="save()">Thêm</button>
+    </div>
+    <div class="search">
+      <label for="search">Tìm kiếm:</label>
+      <input type="text" id="search" oninput="search()">
+    </div>
+    <div class="pagination">
+      <button onclick="prevPage()">Trang trước</button>
+      <span id="page-info"></span>
+      <button onclick="nextPage()">Trang sau</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="studentList">
+        <!-- Dữ liệu sinh viên sẽ được hiển thị ở đây -->
+      </tbody>
+    </table>
+  </div>
+  <div id="delete-modal" class="modal">
+    <div class="modal-content delete-content">
+      <h2>Xác nhận xóa</h2>
+      <p>Bạn có chắc chắn muốn xóa mục này?</p>
+      <button onclick="cancelDelete()" class="cancel-button">Hủy</button>
+      <button onclick="confirmDelete()" class="confirm-button">Xóa</button>
+    </div>
+  </div>
+  <div id="edit-modal" class="modal">
+    <div class="modal-content edit-content">
+      <span class="close" onclick="closeEditModal()">&times;</span>
+      <h2>Sửa thông tin sinh viên</h2>
+      <label for="edit-id">ID</label>
+      <input type="number" id="edit-id">
+      <label for="edit-name">Name</label>
+      <input type="text" id="edit-name">
+      <label for="edit-age">Age</label>
+      <input type="number" id="edit-age">
+      <button onclick="edit()">Lưu</button>
+    </div>
+  </div>
+  <script src="./js/student.js"></script>
 </body>
 </html>
