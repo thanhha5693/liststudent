@@ -9,23 +9,6 @@ var itemsPerPage = 3;
 var editingIndex = -1;
 
 // Hàm lưu thông tin sinh viên mới
-function save() {
-    // Lấy giá trị từ các trường nhập liệu
-    var item_id = document.getElementById("id").value;
-    var item_name = document.getElementById("name").value;
-    var item_age = document.getElementById("age").value;
-
-    // Tạo đối tượng mới và thêm vào mảng data
-    var item = {
-        Id: item_id,
-        Name: item_name,
-        Age: item_age
-    };
-    data.push(item);
-
-    // Gọi hàm render để cập nhật giao diện
-    render();
-}
 
 // Kiểm tra xem có dữ liệu đã lưu trong localStorage không
 var storedData = localStorage.getItem("studentData");
@@ -35,28 +18,43 @@ if (storedData) {
 }
 
 // Hàm lưu thông tin sinh viên và cập nhật giao diện
+// ...
+
+// Hàm lưu thông tin sinh viên và cập nhật giao diện
 function save() {
     // Lấy giá trị từ các trường nhập liệu
     var item_id = document.getElementById("id").value;
     var item_name = document.getElementById("name").value;
     var item_age = document.getElementById("age").value;
 
-    // Tạo đối tượng mới và thêm vào mảng data
-    var item = {
-        Id: item_id,
-        Name: item_name,
-        Age: item_age
-    };
-    data.push(item);
+    // Kiểm tra nếu các trường nhập liệu đều không rỗng
+    if (item_id.trim() !== "" && item_name.trim() !== "" && item_age.trim() !== "") {
+        // Tạo đối tượng mới và thêm vào mảng data
+        var item = {
+            Id: item_id,
+            Name: item_name,
+            Age: item_age
+        };
+        data.push(item);
 
-    // Lưu dữ liệu vào localStorage
-    saveDataToLocalStorage();
+        // Xóa nội dung của các trường nhập liệu sau khi lưu
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
 
-    // Gọi hàm render để cập nhật giao diện
-    render();
+        // Lưu dữ liệu vào localStorage
+        saveDataToLocalStorage();
+
+        // Gọi hàm render để cập nhật giao diện
+        render();
+    } else {
+        alert("Điền đủ thông tin đê bạn ơi !!!");
+    }
 }
 
+
 // ...
+
 
 // Hàm sửa thông tin sinh viên
 function edit(index) {
@@ -101,30 +99,20 @@ function saveDataToLocalStorage() {
 render();
 
 // Hàm tìm kiếm
+
 function search() {
     var searchValue = document.getElementById("search").value.toLowerCase();
-    var studentList = document.getElementById("studentList");
-    var rows = studentList.getElementsByTagName("tr");
-  
-    for (var i = 0; i < rows.length; i++) {
-      var studentRow = rows[i];
-      var studentId = studentRow.getElementsByTagName("td")[1].textContent.toLowerCase(); // Lấy Id từ cột thứ 2
-      var studentName = studentRow.getElementsByTagName("td")[2].textContent.toLowerCase(); // Lấy Name từ cột thứ 3
-      var studentAge = studentRow.getElementsByTagName("td")[3].textContent.toLowerCase(); // Lấy Age từ cột thứ 4
-  
-      // Kiểm tra xem searchValue có tồn tại trong Id, Name hoặc Age của sinh viên không
-      if (
-        studentId.includes(searchValue) ||
-        studentName.includes(searchValue) ||
-        studentAge.includes(searchValue)
-      ) {
-        studentRow.classList.add("highlight"); // Thêm class "highlight" cho kết quả tìm kiếm
-      } else {
-        studentRow.classList.remove("highlight"); // Loại bỏ class "highlight" nếu không tìm thấy
-      }
-    }
-  }
-  
+    var filteredData = data.filter(function(student) {
+        return (
+            student.Id.toLowerCase().includes(searchValue) ||
+            student.Name.toLowerCase().includes(searchValue) ||
+            student.Age.toString().toLowerCase().includes(searchValue)
+        );
+    });
+
+    render(filteredData);
+}
+
   
   
   
