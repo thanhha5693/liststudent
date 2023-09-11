@@ -102,21 +102,32 @@ render();
 
 // Hàm tìm kiếm
 function search() {
-    // Lấy giá trị từ trường tìm kiếm và chuyển thành chữ thường
     var searchValue = document.getElementById("search").value.toLowerCase();
-
-    // Tạo mảng lọc dựa trên giá trị tìm kiếm
-    var filteredData = data.filter(function (item) {
-        return (
-            item.Id.toString().includes(searchValue) ||
-            item.Name.toLowerCase().includes(searchValue) ||
-            item.Age.toString().includes(searchValue)
-        );
-    });
-
-    // Hiển thị kết quả tìm kiếm
-    render(filteredData);
-}
+    var studentList = document.getElementById("studentList");
+    var rows = studentList.getElementsByTagName("tr");
+  
+    for (var i = 0; i < rows.length; i++) {
+      var studentRow = rows[i];
+      var studentId = studentRow.getElementsByTagName("td")[1].textContent.toLowerCase(); // Lấy Id từ cột thứ 2
+      var studentName = studentRow.getElementsByTagName("td")[2].textContent.toLowerCase(); // Lấy Name từ cột thứ 3
+      var studentAge = studentRow.getElementsByTagName("td")[3].textContent.toLowerCase(); // Lấy Age từ cột thứ 4
+  
+      // Kiểm tra xem searchValue có tồn tại trong Id, Name hoặc Age của sinh viên không
+      if (
+        studentId.includes(searchValue) ||
+        studentName.includes(searchValue) ||
+        studentAge.includes(searchValue)
+      ) {
+        studentRow.classList.add("highlight"); // Thêm class "highlight" cho kết quả tìm kiếm
+      } else {
+        studentRow.classList.remove("highlight"); // Loại bỏ class "highlight" nếu không tìm thấy
+      }
+    }
+  }
+  
+  
+  
+  
 
 // Hàm hiển thị dữ liệu lên giao diện
 function render(dataToRender) {
@@ -133,7 +144,7 @@ function render(dataToRender) {
     for (let i = startIndex; i < Math.min(endIndex, dataToDisplay.length); i++) {
         var student = dataToDisplay[i];
         var row = `
-            <tr>
+            <tr class="search-result">
                 <td>${i + 1}</td>
                 <td>${student.Id}</td>
                 <td>${student.Name}</td>
@@ -224,7 +235,7 @@ function setLightMode() {
     document.getElementById("light-mode-button").disabled = true;
     document.getElementById("dark-mode-button").disabled = false;
     var appTitle = document.getElementById("app-title");
-    appTitle.textContent = "Quản lý sinh viên (Chế độ sáng)";
+    appTitle.textContent = "Danh sách sinh viên (Chế độ sáng)";
 }
 
 // Hàm thiết lập chế độ tối
@@ -233,7 +244,7 @@ function setDarkMode() {
     document.getElementById("dark-mode-button").disabled = true;
     document.getElementById("light-mode-button").disabled = false;
     var appTitle = document.getElementById("app-title");
-    appTitle.textContent = "Quản lý sinh viên (Chế độ tối)";
+    appTitle.textContent = "Danh sách sinh viên (Chế độ tối)";
 }
 
 // Khởi tạo ứng dụng và hiển thị dữ liệu ban đầu

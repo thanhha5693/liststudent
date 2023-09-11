@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 800px; /* Giới hạn chiều rộng tối đa của container */
+    max-width: 400px; /* Giới hạn chiều rộng tối đa của container */
     margin: 0 auto; /* Căn giữa container */
     padding: 20px; /* Khoảng cách giữa nội dung và viền container */
 }
@@ -81,6 +81,7 @@ th, td {
     z-index: 2; /* Đảm bảo modal hiển thị trên cùng */
     padding: 20px; /* Khoảng cách giữa nội dung và viền modal */
     max-width: 300px; /* Chiều rộng tối đa của modal */
+    
 }
 
 .modal-content {
@@ -169,6 +170,7 @@ th, td {
     z-index: 2; /* Đảm bảo phần nhập thông tin hiển thị trên cùng */
     padding: 20px; /* Khoảng cách giữa nội dung và viền phần nhập thông tin */
     max-width: 300px; /* Chiều rộng tối đa của phần nhập thông tin */
+    
 }
 
 .form-container h2 {
@@ -204,3 +206,59 @@ th, td {
 .form-container button:hover {
     background-color: #2980b9; /* Màu nền nút trong phần nhập thông tin khi di chuột vào */
 }
+
+.search {
+    max-width: 400px; /* Giới hạn chiều rộng tối đa của search */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 20px; /* Khoảng cách giữa nội dung và viền search */
+}
+
+.pagination {
+    max-width: 400px; /* Giới hạn chiều rộng tối đa của search */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 20px; /* Khoảng cách giữa nội dung và viền search */
+}
+
+/* Hiệu ứng hover cho nút */
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1); /* Phóng to nút khi di chuột qua */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Thay đổi màu sắc nút chuyển đổi chế độ tối/sáng */
+.theme-switch #light-mode-button {
+    background-color: #fff;
+    color: #333;
+}
+
+.theme-switch #dark-mode-button {
+    background-color: #333;
+    color: #fff;
+}
+
+/* CSS cho khi di chuột qua kết quả tìm kiếm */
+tr:hover {
+    background-color: #f0f0f0; /* Màu nền khi di chuột qua */
+    color: #333; /* Màu chữ khi di chuột qua */
+    cursor: pointer; /* Con trỏ chuột thành bàn tay */
+  }
+  
+
+  /* CSS cho các dòng kết quả tìm kiếm */
+.search-result {
+    transition: background-color 0.3s ease; /* Hiệu ứng thay đổi màu nền */
+  }
+  
+  /* CSS cho hiệu ứng khi hover vào kết quả */
+  .search-result:hover {
+    background-color: #f2f2f2; /* Thay đổi màu nền khi hover */
+  }
+  
+  /* CSS cho hiệu ứng khi kết quả được tìm kiếm nổi bật */
+  .highlight {
+    background-color: rgb(197, 197, 176); /* Đổi màu nền thành màu vàng */
+    font-weight: bold; /* Đậm chữ để nổi bật */
+    color: #333; /* Đổi màu chữ nếu cần thiết */
+  }
+  
