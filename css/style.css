@@ -1,142 +1,134 @@
 /* Reset CSS mặc định */
 body, h1, h2, p, label, input, button, table, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    transition: background-color 0.5s ease, color 0.5s ease;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #2980b9;
-  }
-  
-  .form, .search, .pagination {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid #ccc;
-  }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .modal {
-    display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 2;
-  padding: 20px;
-  max-width: 300px;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    position: relative;
-  }
-  
-  .close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-    font-size: 20px;
-  }
-  
-  /* Chế độ tối */
-  .dark-mode body {
-    background-color: #333;
-    color: #fff;
-    transition: background-color 0.5s ease, color 0.5s ease;
-  }
-  
-  .dark-mode button {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .dark-mode button:hover {
-    background-color: #555;
-  }
-  
-  .dark-mode input {
-    background-color: #444;
-    color: #fff;
-    border: 1px solid #555;
-  }
-  
-  .dark-mode table {
-    border: 1px solid #555;
-  }
-  
-  .dark-mode th, .dark-mode td {
-    border: 1px solid #555;
-  }
-  
-  /* ... */
+    margin: 0; /* Loại bỏ margin */
+    padding: 0; /* Loại bỏ padding */
+    border: 0; /* Loại bỏ border */
+}
 
-/* ... */
+body {
+    font-family: Arial, sans-serif; /* Chọn font chữ chung cho body */
+    background-color: #f5f5f5; /* Màu nền mặc định */
+    color: #333; /* Màu chữ mặc định */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Hiệu ứng màu nền và màu chữ chuyển đổi */
+}
 
-/* ... */
+.container {
+    max-width: 800px; /* Giới hạn chiều rộng tối đa của container */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 20px; /* Khoảng cách giữa nội dung và viền container */
+}
 
-/* ... */
+h1 {
+    font-size: 28px; /* Kích thước phông chữ tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách phía dưới tiêu đề */
+}
+
+button {
+    background-color: #3498db; /* Màu nền nút */
+    color: #fff; /* Màu chữ nút */
+    border: none; /* Loại bỏ viền nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+    padding: 10px 15px; /* Khoảng cách giữa nút và nội dung */
+    cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào nút */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng khi di chuột vào nút */
+}
+
+button:hover {
+    background-color: #2980b9; /* Màu nền nút khi di chuột vào */
+}
+
+.form, .search, .pagination {
+    margin-bottom: 20px; /* Khoảng cách phía dưới các phần */
+}
+
+label {
+    display: block; /* Hiển thị nhãn dạng block để nằm trên dòng mới */
+    margin-bottom: 5px; /* Khoảng cách phía dưới nhãn */
+}
+
+input {
+    width: 100%; /* Chiều rộng đầy đủ */
+    padding: 10px; /* Khoảng cách giữa nội dung và viền input */
+    margin-bottom: 10px; /* Khoảng cách phía dưới input */
+    border: 1px solid #ccc; /* Viền input */
+    border-radius: 5px; /* Bo tròn góc input */
+    font-size: 16px; /* Kích thước phông chữ input */
+}
+
+table {
+    width: 100%; /* Chiều rộng đầy đủ */
+    border-collapse: collapse; /* Loại bỏ khoảng cách giữa các ô */
+}
+
+table, th, td {
+    border: 1px solid #ccc; /* Viền table và ô */
+}
+
+th, td {
+    padding: 10px; /* Khoảng cách giữa nội dung và viền của ô và tiêu đề */
+    text-align: left; /* Căn lề văn bản sang trái */
+}
+
+.modal {
+    display: none; /* Ẩn modal ban đầu */
+    position: fixed; /* Đặt vị trí tuyệt đối */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Di chuyển modal đến giữa màn hình */
+    background-color: #fff; /* Màu nền modal */
+    border-radius: 5px; /* Bo tròn góc modal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
+    z-index: 2; /* Đảm bảo modal hiển thị trên cùng */
+    padding: 20px; /* Khoảng cách giữa nội dung và viền modal */
+    max-width: 300px; /* Chiều rộng tối đa của modal */
+}
+
+.modal-content {
+    background-color: #fff; /* Màu nền nội dung modal */
+    padding: 20px; /* Khoảng cách giữa nội dung và viền nội dung modal */
+    border-radius: 5px; /* Bo tròn góc nội dung modal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ nội dung modal */
+    text-align: center; /* Căn giữa nội dung modal */
+    position: relative; /* Đặt vị trí tương đối để sử dụng vị trí tuyệt đối cho các phần tử con */
+}
+
+.close {
+    position: absolute; /* Đặt vị trí tuyệt đối cho nút đóng */
+    top: 5px; /* Khoảng cách từ phía trên */
+    right: 5px; /* Khoảng cách từ phía bên phải */
+    cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào nút */
+    font-size: 20px; /* Kích thước phông chữ của nút đóng */
+}
+
+/* Chế độ tối */
+.dark-mode body {
+    background-color: #333; /* Màu nền chế độ tối */
+    color: #fff; /* Màu chữ chế độ tối */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Hiệu ứng màu nền và màu chữ chuyển đổi */
+}
+
+.dark-mode button {
+    background-color: #333; /* Màu nền nút chế độ tối */
+    color: #fff; /* Màu chữ nút chế độ tối */
+}
+
+.dark-mode button:hover {
+    background-color: #555; /* Màu nền nút chế độ tối khi di chuột vào */
+}
+
+.dark-mode input {
+    background-color: #444; /* Màu nền input chế độ tối */
+    color: #fff; /* Màu chữ input chế độ tối */
+    border: 1px solid #555; /* Viền input chế độ tối */
+}
+
+.dark-mode table {
+    border: 1px solid #555; /* Viền table chế độ tối */
+}
+
+.dark-mode th, .dark-mode td {
+    border: 1px solid #555; /* Viền table cell chế độ tối */
+}
 
 /* Nút chuyển đổi chế độ sáng/tối */
 .theme-switch {
@@ -144,26 +136,71 @@ body, h1, h2, p, label, input, button, table, th, td {
     top: 20px; /* Khoảng cách từ phía trên */
     right: 20px; /* Khoảng cách từ phía bên phải */
     z-index: 9999; /* Để đảm bảo nút nằm trên cùng */
-  }
-  
-  .theme-switch button {
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .theme-switch #light-mode-button {
-    background-color: #fff;
-  }
-  
-  .theme-switch #dark-mode-button {
-    background-color: #333;
-  }
-  
-  /* ... */
-  
+}
 
+.theme-switch button {
+    width: 50px; /* Chiều rộng nút chuyển đổi */
+    height: 50px; /* Chiều cao nút chuyển đổi */
+    border: none; /* Loại bỏ viền nút chuyển đổi */
+    border-radius: 50%; /* Bo tròn góc nút chuyển đổi */
+    margin: 0 5px; /* Khoảng cách giữa các nút chuyển đổi */
+    cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào nút chuyển đổi */
+    transition: background-color 0.3s ease; /* Hiệu ứng khi di chuột vào nút chuyển đổi */
+}
+
+.theme-switch #light-mode-button {
+    background-color: #fff; /* Màu nền cho nút chế độ sáng */
+}
+
+.theme-switch #dark-mode-button {
+    background-color: #333; /* Màu nền cho nút chế độ tối */
+}
+
+/* Phần nhập thông tin */
+.form-container {
+    display: none; /* Ẩn phần nhập thông tin ban đầu */
+    position: fixed; /* Đặt vị trí tuyệt đối */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Di chuyển phần nhập thông tin đến giữa màn hình */
+    background-color: #fff; /* Màu nền của phần nhập thông tin */
+    border-radius: 5px; /* Bo tròn góc của phần nhập thông tin */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng bóng đổ */
+    z-index: 2; /* Đảm bảo phần nhập thông tin hiển thị trên cùng */
+    padding: 20px; /* Khoảng cách giữa nội dung và viền phần nhập thông tin */
+    max-width: 300px; /* Chiều rộng tối đa của phần nhập thông tin */
+}
+
+.form-container h2 {
+    font-size: 18px; /* Kích thước phông chữ cho tiêu đề phần nhập thông tin */
+    margin-bottom: 15px; /* Khoảng cách phía dưới tiêu đề */
+}
+
+.form-container label {
+    display: block; /* Hiển thị nhãn dạng block để nằm trên dòng mới */
+    font-weight: bold; /* Đậm chữ của nhãn */
+    margin-bottom: 5px; /* Khoảng cách phía dưới nhãn */
+}
+
+.form-container input {
+    width: 100%; /* Chiều rộng đầy đủ */
+    padding: 10px; /* Khoảng cách giữa nội dung và viền input */
+    margin-bottom: 10px; /* Khoảng cách phía dưới input */
+    border: 1px solid #ccc; /* Viền input */
+    border-radius: 5px; /* Bo tròn góc input */
+    font-size: 16px; /* Kích thước phông chữ input */
+}
+
+.form-container button {
+    background-color: #3498db; /* Màu nền nút trong phần nhập thông tin */
+    color: #fff; /* Màu chữ nút trong phần nhập thông tin */
+    border: none; /* Loại bỏ viền nút */
+    border-radius: 5px; /* Bo tròn góc nút */
+    padding: 10px 15px; /* Khoảng cách giữa nút và nội dung nút */
+    cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào nút */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng khi di chuột vào nút */
+}
+
+.form-container button:hover {
+    background-color: #2980b9; /* Màu nền nút trong phần nhập thông tin khi di chuột vào */
+}
