@@ -262,3 +262,11 @@ tr:hover {
     color: #333; /* Đổi màu chữ nếu cần thiết */
   }
   
+
+  #clock {
+    font-size: 18px;
+}
+#calendar {
+    font-size: 15px;
+    margin-top: 10px;
+}
